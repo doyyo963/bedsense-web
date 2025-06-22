@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bedsense - Gestión de Camas Hospitalarias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+      padding-bottom: 100px;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      color: #3b82f6;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #3b82f6;
+    }
+
+    main {
+      padding: 40px 10%;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #0f172a;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    p, li {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    .video-container {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-title {
+      font-size: 22px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #1e293b;
+      color: #f1f5f9;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bedsense</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="gallery.html">Galería</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>¿Qué es Bedsense?</h2>
+      <div class="gallery">
+        <img src="img/logo.jpg" alt="Logo de Bedsense" class="logo">
+      </div>
+      <p>
+        Bedsense es un sistema de gestión en tiempo real de camas hospitalarias que permite a los administradores de hospitales monitorear la disponibilidad de camas por área. El software proporciona una vista clara de cuántas camas están ocupadas y cuántas están libres, mejorando la eficiencia operativa y la toma de decisiones en el manejo de recursos hospitalarios.
+      </p>
+    </section>
+
+    <section class="features">
+      <h2>Características</h2>
+      <ul>
+        <li> Monitoreo en tiempo real por área hospitalaria</li>
+        <li> Seguimiento eficiente de camas disponibles y ocupadas</li>
+        <li> Almacenamiento robusto con Google Cloud SQL y MySQL</li>
+      </ul>
+    </section>
+
+    <section class="tech">
+      <h2>Tecnologías utilizadas</h2>
+      <ul>
+        <li> Python para la lógica del sistema</li>
+        <li> Google SQL + MySQL para la base de datos</li>
+      </ul>
+    </section>
+
+    <section class="audience">
+      <h2>¿A quién va dirigido?</h2>
+      <p>
+        Este sistema está diseñado para administradores de hospitales, personal médico y responsables de la gestión de recursos hospitalarios, permitiendo un manejo más eficiente y transparente de la disponibilidad de camas.
+      </p>
+    </section>
+
+    <section class="gallery-section">
+      <div class="video-container">
+        <h2 class="video-title">Video del Proyecto</h2>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/CUapPhdM7nc" title="Video de Bedsense" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>2025 Bedsense. Trabajo Final de Diseño de Equipos Médicos.</p>
+  </footer>
+</body>
+</html>
