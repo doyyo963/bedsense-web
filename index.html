@@ -45,6 +45,17 @@
       z-index: 10;
     }
 
+    /* Logo a la izquierda en el header */
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      width: 40px; /* Ajusta el tamaño del logo */
+      margin-right: 10px;
+    }
+
     header h1 {
       font-size: 32px;
       font-weight: 700;
@@ -113,20 +124,6 @@
       text-align: center;
       margin-bottom: 20px;
       color: var(--primary-color);
-    }
-
-    /* Colocamos el logo de manera más estética */
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      margin-top: -100px; /* Lo eleva para que quede visible sobre la portada */
-      z-index: 5;
-    }
-
-    .intro-logo {
-      width: 180px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .features-grid, .tech-grid {
@@ -214,7 +211,10 @@
 <body>
 
   <header>
-    <h1>Bedsense</h1>
+    <div class="logo">
+      <img src="/mnt/data/21a83ccb-631d-4d1a-8ac4-6227dc7a3b8a.png" alt="Logo de Bedsense"> <!-- Aquí está tu logo -->
+      <h1>Bedsense</h1>
+    </div>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="gallery.html">Galería</a>
@@ -228,11 +228,6 @@
       <p>Solución avanzada para el control en tiempo real de camas hospitalarias.</p>
     </div>
   </section>
-
-  <!-- Logo ubicado sobre la imagen de portada -->
-  <div class="logo-container">
-    <img src="img/logo.jpg" alt="Logo de Bedsense" class="intro-logo">
-  </div>
 
   <main>
     <section class="section">
