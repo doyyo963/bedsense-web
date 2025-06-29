@@ -6,136 +6,207 @@
   <title>Bedsense - Gestión de Camas Hospitalarias</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #ff5733;
+      --secondary-color: #4e79a7;
+      --bg-color: #f4f5f7;
+      --text-color: #1d1d1d;
+      --card-bg: #ffffff;
+      --highlight-color: #f9c846;
+      --border-color: #e1e8f0;
+      --footer-bg: #0f172a;
+      --button-hover-color: #ff9933;
+    }
+
     * {
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background-color: #f8fafc;
-      color: #1e293b;
-      padding-bottom: 100px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 16px;
     }
 
     header {
-      background-color: #ffffff;
-      padding: 20px 40px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      padding: 20px 10%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
     header h1 {
-      color: #3b82f6;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 700;
     }
 
     nav a {
       margin-left: 20px;
       text-decoration: none;
-      color: #334155;
+      color: white;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #3b82f6;
+      color: var(--highlight-color);
+    }
+
+    /* Imagen de portada */
+    .hero {
+      position: relative;
+      background-image: url('https://advantecnia.com/wp-content/uploads/2023/07/enfermera-1024x683.jpg'); /* Cambia esta URL por tu imagen */
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 22px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     }
 
     main {
-      padding: 40px 10%;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      font-size: 24px;
-      color: #0f172a;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    p, li {
-      font-size: 16px;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .gallery {
+      padding: 60px 10%;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .section {
+      background-color: var(--card-bg);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .section h2 {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .intro-logo {
+      display: block;
+      margin: 0 auto 30px;
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .features-grid, .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       margin-top: 20px;
     }
 
-    .gallery img {
+    .feature, .tech {
+      background-color: var(--bg-color);
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
-    .logo {
-      width: 160px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
-
-    .video-container {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .video-title {
-      font-size: 22px;
-      margin-bottom: 16px;
       text-align: center;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .feature:hover, .tech:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon, .tech-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
     }
 
     .video-wrapper {
-      width: 100%;
-      max-width: 800px;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
 
     .video-wrapper iframe {
       width: 100%;
       height: 450px;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .audience-text {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 18px;
+      text-align: center;
+      color: #7f8c8d;
     }
 
     footer {
-      background-color: #1e293b;
-      color: #f1f5f9;
-      padding: 20px;
+      background-color: var(--footer-bg);
+      color: white;
+      padding: 25px 10%;
       text-align: center;
-      position: relative;
-      bottom: 0;
-      width: 100%;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--highlight-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 40px 8%;
+      }
+
+      .video-wrapper iframe {
+        height: 280px;
+      }
+
+      .intro-logo {
+        width: 150px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Bedsense</h1>
     <nav>
@@ -144,53 +215,79 @@
     </nav>
   </header>
 
+  <!-- Imagen de portada -->
+  <section class="hero">
+    <div>
+      <h2>Transformando la Gestión Hospitalaria</h2>
+      <p>Solución avanzada para el control en tiempo real de camas hospitalarias.</p>
+    </div>
+  </section>
+
   <main>
-    <section class="intro">
+    <section class="section">
       <h2>¿Qué es Bedsense?</h2>
-      <div class="gallery">
-        <img src="img/logo.jpg" alt="Logo de Bedsense" class="logo">
-      </div>
-      <p>
-        Bedsense es un sistema de gestión en tiempo real de camas hospitalarias que permite a los administradores de hospitales monitorear la disponibilidad de camas por área. El software proporciona una vista clara de cuántas camas están ocupadas y cuántas están libres, mejorando la eficiencia operativa y la toma de decisiones en el manejo de recursos hospitalarios.
+      <img src="img/logo.jpg" alt="Logo de Bedsense" class="intro-logo">
+      <p class="audience-text">
+        Bedsense es un sistema inteligente para la gestión en tiempo real de camas hospitalarias. Ofrece a los administradores una visión clara y dinámica del estado de ocupación por área, permitiendo tomar decisiones rápidas, basadas en datos y mejorando la eficiencia operativa hospitalaria.
       </p>
     </section>
 
-    <section class="features">
+    <section class="section">
       <h2>Características</h2>
-      <ul>
-        <li> Monitoreo en tiempo real por área hospitalaria</li>
-        <li> Seguimiento eficiente de camas disponibles y ocupadas</li>
-        <li> Almacenamiento robusto con Google Cloud SQL y MySQL</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">🛏️</div>
+          <strong>Monitoreo en Tiempo Real</strong>
+          <p>Visualiza la disponibilidad de camas al instante, por cada área hospitalaria.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <strong>Dashboard Intuitivo</strong>
+          <p>Interfaz moderna para facilitar decisiones rápidas y organizadas.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔐</div>
+          <strong>Datos Seguros</strong>
+          <p>Almacenamiento en la nube con Google SQL y protocolos seguros.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="tech">
-      <h2>Tecnologías utilizadas</h2>
-      <ul>
-        <li> Python para la lógica del sistema</li>
-        <li> Google SQL + MySQL para la base de datos</li>
-      </ul>
+    <section class="section">
+      <h2>Tecnologías Utilizadas</h2>
+      <div class="tech-grid">
+        <div class="tech">
+          <div class="tech-icon">🐍</div>
+          <strong>Python</strong>
+          <p>Lógica del sistema, procesamiento y automatización.</p>
+        </div>
+        <div class="tech">
+          <div class="tech-icon">💾</div>
+          <strong>MySQL + Google Cloud</strong>
+          <p>Base de datos robusta para mantener toda la información segura.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="audience">
+    <section class="section">
       <h2>¿A quién va dirigido?</h2>
-      <p>
-        Este sistema está diseñado para administradores de hospitales, personal médico y responsables de la gestión de recursos hospitalarios, permitiendo un manejo más eficiente y transparente de la disponibilidad de camas.
+      <p class="audience-text">
+        Bedsense está diseñado para equipos de gestión hospitalaria, personal médico y administrativos que necesitan tener control total sobre los recursos de hospitalización de manera eficiente, visual y centralizada.
       </p>
     </section>
 
-    <section class="gallery-section">
-      <div class="video-container">
-        <h2 class="video-title">Video del Proyecto</h2>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/CUapPhdM7nc" title="Video de Bedsense" allowfullscreen></iframe>
-        </div>
+    <section class="section">
+      <h2>Video del Proyecto</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/CUapPhdM7nc" title="Video de Bedsense" allowfullscreen></iframe>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>2025 Bedsense. Trabajo Final de Diseño de Equipos Médicos.</p>
+    <p>&copy; 2025 Bedsense | Proyecto final de Diseño de Equipos Médicos</p>
+    <p><a href="privacy.html">Política de Privacidad</a></p>
   </footer>
+
 </body>
 </html>
