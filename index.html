@@ -45,14 +45,13 @@
       z-index: 10;
     }
 
-    /* Logo a la izquierda en el header */
     header .logo {
       display: flex;
       align-items: center;
     }
 
     header .logo img {
-      width: 40px; /* Ajusta el tamaño del logo */
+      width: 40px;
       margin-right: 10px;
     }
 
@@ -73,7 +72,6 @@
       color: var(--highlight-color);
     }
 
-    /* Imagen de portada */
     .hero {
       position: relative;
       background-image: url('https://ifses.es/wp-content/uploads/2024/04/camas-hospitalarias.jpg'); 
@@ -167,6 +165,33 @@
       border: none;
     }
 
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .tab-button:hover {
+      background-color: var(--button-hover-color);
+    }
+
+    .tab-button.active {
+      background-color: var(--primary-color);
+    }
+
     .audience-text {
       max-width: 850px;
       margin: 0 auto;
@@ -221,7 +246,6 @@
     </nav>
   </header>
 
-  <!-- Imagen de portada -->
   <section class="hero">
     <div>
       <h2>Transformando la Gestión Hospitalaria</h2>
@@ -282,9 +306,25 @@
     </section>
 
     <section class="section">
-      <h2>Video del Proyecto</h2>
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/CUapPhdM7nc" title="Video de Bedsense" allowfullscreen></iframe>
+      <h2>Videos del Proyecto por Rol</h2>
+      <div class="video-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" onclick="showVideo('medico')">👩‍⚕️ Médico</button>
+          <button class="tab-button" onclick="showVideo('tecnico')">🛠️ Técnico</button>
+          <button class="tab-button" onclick="showVideo('limpieza')">🧹 Limpieza</button>
+        </div>
+        
+        <div class="video-wrapper" id="medico">
+          <iframe src="https://www.youtube.com/embed/pj7OHdHWi-8" title="Video Médico" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-wrapper" id="tecnico" style="display:none;">
+          <iframe src="https://www.youtube.com/embed/LbVTN9xEhnE" title="Video Técnico" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-wrapper" id="limpieza" style="display:none;">
+          <iframe src="https://www.youtube.com/embed/PXYVUE1KcdA" title="Video Limpieza" allowfullscreen></iframe>
+        </div>
       </div>
     </section>
   </main>
@@ -293,6 +333,17 @@
     <p>&copy; 2025 Bedsense | Proyecto final de Diseño de Equipos Médicos</p>
     <p><a href="privacy.html">Política de Privacidad</a></p>
   </footer>
+
+  <script>
+    function showVideo(id) {
+      const videos = document.querySelectorAll('.video-wrapper');
+      const buttons = document.querySelectorAll('.tab-button');
+      videos.forEach(v => v.style.display = 'none');
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(id).style.display = 'block';
+      event.target.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
